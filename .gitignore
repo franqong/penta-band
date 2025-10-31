@@ -1,0 +1,19 @@
+# Compilados
+*.exe
+*.o
+*.obj
+*.out
+
+# Carpetas de build
+/build/
+bin/
+Debug/
+Release/
+
+# Archivos temporales
+*.log
+*.tmp
+*.cache
+
+# Config VSCode
+.vscode/
