@@ -38,6 +38,6 @@ compile_commands.json
 .idea/
 *.user
 
-# Gemini CLI
-!GEMINI.md
-
+# Ignored Markdown files
+CLAUDE.md
+GEMINI.md
