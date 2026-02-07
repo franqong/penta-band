@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file alias="icons/write.png">assets/icons/write.png</file>
+        <file alias="icons/compose.png">assets/icons/compose.png</file>
+        <file alias="icons/record.png">assets/icons/record.png</file>
+        <file alias="icons/avatar.png">assets/icons/avatar.png</file>
+        <file alias="images/penta-band.png">assets/images/penta-band.png</file>
+    </qresource>
+</RCC>
