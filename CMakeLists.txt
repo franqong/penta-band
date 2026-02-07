@@ -20,3 +20,11 @@ add_executable(${PROJECT_NAME}
 )
 
 target_link_libraries(${PROJECT_NAME} Qt6::Widgets)
+
+if (WIN32)
+    add_custom_command(TARGET PentaBand POST_BUILD
+        COMMAND "C:/Qt/6.10.1/mingw_64/bin/windeployqt.exe"
+                "$<TARGET_FILE:PentaBand>"
+        COMMENT "Deploying Qt runtime with windeployqt"
+    )
+endif()
