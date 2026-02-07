@@ -17,7 +17,7 @@ Header::Header(QWidget *parent)
 
     // This widget will be our solid background
     backgroundWidget = new QWidget(this);
-    backgroundWidget->setStyleSheet("background-color: #131315;");
+    backgroundWidget->setStyleSheet("background-color: #131315; border-bottom: 1px solid #676767;");
     
     // Add the background to the main container, making it fill the space
     containerLayout->addWidget(backgroundWidget);
