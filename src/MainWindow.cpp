@@ -22,7 +22,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     // Add Body
     QWidget *body = new QWidget(this);
-    body->setStyleSheet("background-color: #191d24;");
+    body->setStyleSheet("background-color: #0b0e11;");
     mainLayout->addWidget(body, 1); // The '1' makes the body stretch to fill available space
 
     // Set the central widget
