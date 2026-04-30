@@ -1,9 +1,9 @@
 <RCC>
     <qresource prefix="/">
-        <file alias="icons/write.png">assets/icons/write.png</file>
-        <file alias="icons/compose.png">assets/icons/compose.png</file>
-        <file alias="icons/record.png">assets/icons/record.png</file>
-        <file alias="icons/avatar.png">assets/icons/avatar.png</file>
-        <file alias="images/penta-band.png">assets/images/penta-band.png</file>
+        <file alias="icons/write.svg">resources/icons/write.svg</file>
+        <file alias="icons/compose.svg">resources/icons/compose.svg</file>
+        <file alias="icons/record.svg">resources/icons/record.svg</file>
+        <file alias="icons/avatar.svg">resources/icons/avatar.svg</file>
+        <file alias="images/penta-band.svg">resources/icons/penta-band.svg</file>
     </qresource>
 </RCC>

@@ -17,6 +17,7 @@ add_executable(${PROJECT_NAME}
     src/Header.cpp
     src/Header.h
     resources.qrc
+    app_icon.rc
 )
 
 target_link_libraries(${PROJECT_NAME} Qt6::Widgets)

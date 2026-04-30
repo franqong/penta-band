@@ -31,9 +31,9 @@ Header::Header(QWidget *parent)
     QHBoxLayout *leftLayout = new QHBoxLayout();
     leftLayout->setSpacing(15);
 
-    writeButton = new QPushButton(QIcon(":/icons/write.png"), "");
-    composeButton = new QPushButton(QIcon(":/icons/compose.png"), "");
-    recordButton = new QPushButton(QIcon(":/icons/record.png"), "");
+    writeButton = new QPushButton(QIcon(":/icons/write.svg"), "");
+    composeButton = new QPushButton(QIcon(":/icons/compose.svg"), "");
+    recordButton = new QPushButton(QIcon(":/icons/record.svg"), "");
 
     for (QPushButton* btn : {writeButton, composeButton, recordButton}) {
         btn->setFixedSize(40, 40);
@@ -45,7 +45,7 @@ Header::Header(QWidget *parent)
     
     // --- Center Section ---
     logoLabel = new QLabel(this);
-    QPixmap logoPixmap(":/images/penta-band.png");
+    QPixmap logoPixmap(":/images/penta-band.svg");
     logoLabel->setPixmap(logoPixmap.scaled(150, 40, Qt::KeepAspectRatio, Qt::SmoothTransformation));
     logoLabel->setAlignment(Qt::AlignCenter);
 
@@ -55,7 +55,7 @@ Header::Header(QWidget *parent)
     rightLayout->setAlignment(Qt::AlignRight);
 
     avatarLabel = new QLabel(this);
-    QPixmap avatarPixmap(":/icons/avatar.png");
+    QPixmap avatarPixmap(":/icons/avatar.svg");
     avatarLabel->setPixmap(avatarPixmap.scaled(32, 32, Qt::KeepAspectRatio, Qt::SmoothTransformation));
     
     usernameLabel = new QLabel("Username", this);
