@@ -63,6 +63,8 @@ Header::Header(QWidget *parent)
     
     rightLayout->addWidget(avatarLabel);
     rightLayout->addWidget(usernameLabel);
+    // Add a fixed spacer to balance the width with the leftLayout
+    rightLayout->addSpacerItem(new QSpacerItem(43, 0, QSizePolicy::Fixed, QSizePolicy::Minimum));
 
     // --- Assemble Layout ---
     mainLayout->addLayout(leftLayout);
