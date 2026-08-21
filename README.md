@@ -1,5 +1,9 @@
 <p align="center">
-  <img src="/assets/branding/penta-band.svg" width="200" alt="Penta">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/branding/penta-band-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="assets/branding/penta-band-light.svg">
+    <img src="assets/branding/penta-band-light.svg" width="200" alt="Penta Band">
+  </picture>
 </p>
 
 Penta Band is a standalone, open-source desktop application designed as a dedicated workspace for music composition. It serves as a complementary project to "Penta," a web-based social music network, aiming to provide composers with a comprehensive toolset for their creative process, from initial ideas to finished pieces. The long-term vision includes deep integration with the Penta social platform, allowing seamless sharing and collaboration.
