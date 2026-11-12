@@ -73,5 +73,72 @@ Penta Band is committed to leveraging open-source tools to ensure a collaborativ
 *   **CLI & Cross-Platform Tools:** Prioritize Cargo, Git and LilyPond for
     reproducible development and broader compatibility.
 
+## Development setup
+
+### Required tools
+
+Install the Rust toolchain with `rustup` and verify that Cargo is available:
+
+```bash
+rustup toolchain install stable
+rustup default stable
+cargo --version
+rustc --version
+```
+
+The project uses the Rust edition declared in the workspace `Cargo.toml`.
+Cargo downloads the Rust dependencies automatically; they do not need to be
+installed manually or separately inside each crate.
+
+### Linux dependencies
+
+On Debian/Ubuntu, GPUI requires native development libraries for the window
+system, keyboard input and fonts:
+
+```bash
+sudo apt install build-essential pkg-config \
+  libxcb1-dev libxkbcommon-dev libxkbcommon-x11-dev \
+  libfontconfig1-dev libfreetype6-dev
+```
+
+If the optional `native-audio` feature is enabled, install ALSA development
+files as well:
+
+```bash
+sudo apt install libasound2-dev
+```
+
+Other operating systems may require the equivalent development libraries for
+their windowing and audio backends.
+
+### Build and run
+
+From the repository root:
+
+```bash
+cargo build
+cargo run -p penta-band-desktop
+```
+
+For an optimized executable:
+
+```bash
+cargo build --release
+cargo run --release -p penta-band-desktop
+```
+
+The generated binaries are located at:
+
+```text
+target/debug/penta-band-desktop
+target/release/penta-band-desktop
+```
+
+The optional native audio feature can be compiled with:
+
+```bash
+cargo build -p penta-band-audio --features native-audio
+```
+
 > [!NOTE]
 > Penta Band was migrated from C++/Qt to Rust/GPUI. The migration preserves the original desktop-first direction while introducing a modular Rust workspace for the interface, domain, audio, MIDI and markup layers.
