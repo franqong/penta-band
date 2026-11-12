@@ -1,0 +1,11 @@
+[package]
+name = "penta-band-desktop"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+anyhow.workspace = true
+gpui = "0.2.2"
+libc.workspace = true
+penta-band-core = { path = "../penta-band-core" }

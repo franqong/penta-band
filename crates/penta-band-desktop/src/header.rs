@@ -1,0 +1,106 @@
+use gpui::{App, IntoElement, RenderOnce, Window, div, prelude::*, px, rgb, svg};
+
+#[derive(IntoElement)]
+pub struct Header;
+
+impl Header {
+    fn nav_item(icon: &'static str) -> impl IntoElement {
+        div()
+            .flex()
+            .items_center()
+            .px_2()
+            .py_2()
+            .rounded_md()
+            .text_color(rgb(0xedeff1))
+            .child(
+                svg()
+                    .path(icon)
+                    .size(px(22.0))
+                    .text_color(rgb(0xecdfcc)),
+            )
+    }
+}
+
+impl RenderOnce for Header {
+    fn render(self, _window: &mut Window, _cx: &mut App) -> impl IntoElement {
+        div()
+            .h(px(70.0))
+            .w_full()
+            .flex()
+            .items_center()
+            .justify_between()
+            .px_6()
+            .bg(rgb(0x0a0c10))
+            .border_b_1()
+            .border_color(rgb(0x676767))
+            .font_family("sans")
+            .child(
+                div()
+                    .flex()
+                    .items_center()
+                    .gap_2()
+                    .flex_1()
+                    .child(Self::nav_item("icons/write.svg"))
+                    .child(Self::nav_item("icons/compose.svg"))
+                    .child(Self::nav_item("icons/record.svg")),
+            )
+            .child(
+                div()
+                    .flex()
+                    .items_center()
+                    .gap_3()
+                    .text_color(rgb(0xecdfcc))
+                    .child(
+                        svg()
+                            .path("icons/penta-band.svg")
+                            .h(px(34.0))
+                            .w(px(69.0))
+                            .text_color(rgb(0xecdfcc)),
+                    ),
+            )
+            .child(
+                div()
+                    .flex()
+                    .items_center()
+                    .gap_4()
+                    .flex_1()
+                    .justify_end()
+                    .child(
+                        div()
+                            .w(px(180.0))
+                            .flex()
+                            .items_center()
+                            .justify_between()
+                            .gap_2()
+                            .px_3()
+                            .py_1()
+                            .rounded_lg()
+                            .bg(rgb(0x1a1d23))
+                            .border_1()
+                            .border_color(rgb(0x676767))
+                            .text_color(rgb(0x8f969e))
+                            .child("Search...")
+                            .child(
+                                svg()
+                                    .path("icons/search.svg")
+                                    .size(px(14.0))
+                                    .text_color(rgb(0x8f969e)),
+                            ),
+                    )
+                    .child(
+                        div()
+                            .flex()
+                            .items_center()
+                            .gap_2()
+                            .text_color(rgb(0xedeff1))
+                            .child(
+                                svg()
+                                    .path("icons/avatar.svg")
+                                    .size(px(28.0))
+                                    .text_color(rgb(0xecdfcc)),
+                            )
+                            .child("Franco"),
+                    ),
+            )
+    }
+}

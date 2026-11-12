@@ -25,17 +25,21 @@ It's built with the composer's needs in mind, providing all the essential tools 
 *   **Text Editor for Lyrics:** Implement a Markdown-based text editor.
 *   **Chord/Note Annotation:** Ability to add chords and musical notes over lyrics.
 *   **Simple Score Editor:** A basic editor with export capabilities to PDF/SVG via LilyPond.
-*   **UI Framework Selection (Qt):** Create a very basic layout prototype using Qt.
+*   **Native Rust UI:** Build the desktop shell with GPUI and keep the domain
+    independent from the interface.
 
 ### Phase 2: Core Implementation
 *   **Markdown Lyric Editor:** Develop a custom widget for Markdown-based lyric editing with chord integration.
 *   **Score Export Integration:** Implement functionality to export scores using LilyPond as a textual backend.
-*   **Basic Playback Engine:** Integrate a basic audio playback engine (e.g., using RtAudio/FluidSynth for MIDI playback from generated scores).
+*   **Basic Playback Engine:** Integrate CPAL for audio devices and midir for
+    MIDI communication.
 *   **File Import/Export:** Enable import and export of relevant files (lyrics, PDF scores, MIDI files).
 
 ### Phase 3: Integrations & Improvements
 *   **Open-Source DAW Integration:** Explore import/export of MIDI and audio with open-source DAWs.
-*   **Enhanced Score Editing/Visualization:** Improve score editing and visualization (consider Musescore, Verovio, or custom Qt widgets).
+*   **Enhanced Score Editing/Visualization:** Improve score editing and
+    visualization using Rust-native components and LilyPond/Verovio where
+    appropriate.
 *   **Project/Album Management:** Add features for structuring projects and albums with metadata.
 
 ### Phase 4: Future Online Preparation
@@ -46,11 +50,19 @@ It's built with the composer's needs in mind, providing all the essential tools 
 
 Penta Band is committed to leveraging open-source tools to ensure a collaborative and accessible development environment.
 
-*   **Graphical Framework:** Qt (for a robust, cross-platform user interface).
-*   **Audio & MIDI:** RtAudio / RtMidi (for low-latency audio input/output and MIDI communication).
-*   **Text/Music Processing:** LilyPond (for high-quality musical notation engraving and export).
-*   **Language:** C++ (for performance and system-level control).
-*   **Build System:** CMake (for cross-platform build process management).
+*   **Language:** Rust.
+*   **Graphical Framework:** GPUI, a GPU-accelerated native Rust UI framework.
+*   **Workspace:** Cargo workspace organized into independent crates:
+    `penta-band-core`, `penta-band-desktop`, `penta-band-audio` and
+    `penta-band-markup`.
+*   **Audio & MIDI:** CPAL and midir, enabled as the native audio layer is
+    implemented.
+*   **Lyrics and Markdown:** ropey for text editing and pulldown-cmark for
+    Markdown parsing and rendering.
+*   **Music notation:** LilyPond as the initial engraving and export backend.
+*   **Assets:** SVG resources stored in `resources/icons/` and embedded into
+    the desktop binary.
+*   **Build System:** Cargo.
 *   **Version Control:** Git (for collaborative development).
 
 ## Key Development Advice
@@ -58,8 +70,8 @@ Penta Band is committed to leveraging open-source tools to ensure a collaborativ
 *   **Desktop-First Development:** Develop and thoroughly test the core functionalities on a powerful desktop environment.
 *   **Laptop Usability:** Continuously test on a laptop to ensure the software remains usable and lightweight on hardware-limited systems.
 *   **Modular Architecture:** Segment the application into distinct modules to allow loading only necessary components, optimizing performance on less powerful machines.
-*   **CLI & Cross-Platform Tools:** Prioritize the use of Command Line Interface (CLI) and cross-platform tools (like CMake, Git, LilyPond) for broader compatibility and ease of development.
+*   **CLI & Cross-Platform Tools:** Prioritize Cargo, Git and LilyPond for
+    reproducible development and broader compatibility.
 
-## Contributing
-
-As an open-source project, contributions are highly welcome! Please refer to the `CONTRIBUTING.md` (to be created) for guidelines on how to get involved.
+> [!NOTE]
+> Penta Band was migrated from C++/Qt to Rust/GPUI. The migration preserves the original desktop-first direction while introducing a modular Rust workspace for the interface, domain, audio, MIDI and markup layers.

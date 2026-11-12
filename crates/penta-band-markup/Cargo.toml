@@ -1,0 +1,10 @@
+[package]
+name = "penta-band-markup"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+pulldown-cmark.workspace = true
+ropey.workspace = true
+
